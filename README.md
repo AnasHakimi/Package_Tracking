@@ -14,5 +14,14 @@ This project strengthened my Java development skills, deepened my understanding 
 
 ## System Preview:
 
-![Project Screenshot](https://github.com/AnasHakimi/Photostat_-_Printing_Service_System/blob/main/homepage.png?raw=true)
-- Homepage
+![Project Screenshot](https://github.com/AnasHakimi/Package_Tracking/blob/main/PackageTracking/AIO%20package%20tracking/login.png)
+- Login Page
+
+![Project Screenshot](https://github.com/AnasHakimi/Package_Tracking/blob/main/PackageTracking/AIO%20package%20tracking/1.png)
+- Homepage 
+
+![Project Screenshot](https://github.com/AnasHakimi/Package_Tracking/blob/main/PackageTracking/AIO%20package%20tracking/dashboard.png)
+- User Dashboard
+
+![Project Screenshot](https://github.com/AnasHakimi/Package_Tracking/blob/main/PackageTracking/AIO%20package%20tracking/admin%20dashboard.png)
+- Admin Dashboard
