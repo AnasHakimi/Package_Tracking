@@ -1,0 +1,613 @@
+@charset "ISO-8859-1";
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+body{
+  height: 100%;
+  width: 100%;
+  background-image: url('images/bg-ecommerce.jpg');
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 85px;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
+  background: #161a2d;
+  padding: 25px 20px;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.sidebar:hover {
+  width: 278px;
+}
+
+.sidebar .sidebar-header {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .sidebar-header img {
+  width: 42px;
+  border-radius: 50%;
+}
+
+.sidebar .sidebar-header h2 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 23px;
+}
+
+.sidebar-links h4 {
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  margin: 10px 0;
+  position: relative;
+}
+
+.sidebar-links h4 span {
+  opacity: 0;
+}
+
+.sidebar:hover .sidebar-links h4 span {
+  opacity: 1;
+}
+
+.sidebar-links .menu-separator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(1);
+  transform: translateY(-50%);
+  background: #fd7337;
+  transform-origin: right;
+  transition-delay: 0.2s;
+}
+
+.sidebar:hover .sidebar-links .menu-separator {
+  transition-delay: 0s;
+  transform: scaleX(0);
+}
+
+.sidebar-links {
+  list-style: none;
+  margin-top: 20px;
+  height: 80%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.sidebar-links::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-links li a {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 15px 10px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.sidebar-links li a:hover {
+  color: #fd7337;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.user-account {
+  margin-top: auto;
+  padding: 12px 10px;
+  margin-left: -10px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  color: #161a2d;
+}
+
+.user-profile img {
+  width: 42px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.user-profile h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.user-profile span {
+  font-size: 0.775rem;
+  font-weight: 600;
+}
+
+.user-detail {
+  margin-left: 23px;
+  white-space: nowrap;
+}
+
+.sidebar:hover .user-account {
+  background: #fff;
+  border-radius: 4px;
+}
+
+
+nav{
+   background: #fff;
+   width: 100%;
+   padding: 10px 2%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   position: relative;
+   z-index: 1;
+   
+}
+
+.wrapper{
+  width: 380px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: #161a2d;
+}
+.wrapper form{
+  padding: 10px 30px 50px 30px;
+}
+.wrapper form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+.wrapper form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.wrapper form .field input:focus,
+form .field input:valid{
+  border-color: #fd7337;
+}
+.wrapper form .field label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+form .field input:focus ~ label,
+form .field input:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: #fd7337;
+  background: #fff;
+  transform: translateY(-50%);
+}
+
+form .field input[type="submit"]{
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #161a2d;
+  transition: all 0.3s ease;
+}
+form .field input[type="submit"]:active{
+  transform: scale(0.95);
+}
+
+
+.select {
+  position: relative;
+  margin-top: 20px;
+  height: 50px;
+}
+
+.select select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.select select:focus {
+  border-color: #fd7337;
+}
+
+.select label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.select select:focus ~ label,
+.select select:valid ~ label {
+  top: 0%;
+  font-size: 16px;
+  color: #fd7337;
+  background: #fff;
+  transform: translateY(-50%);
+}
+
+.container{
+	display: flex;
+    margin-top: 100px;
+    justify-content: center;
+}
+
+.con{
+	max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 14%;
+}
+
+
+.sidebar-header .hamburger-icon {
+    font-size: 31px;
+    cursor: pointer;
+    margin-left: 13px;
+    color: white;
+}
+        
+.logo{
+	margin-left: 75px;
+}
+#embedTrack {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 5%;
+}
+
+.user-pic{
+	width: 40px;
+	border-radius: 50%;
+	cursor: pointer;
+	margin-left: 30px;
+	border: 2px solid #000;
+	
+}
+
+.sub-menu-wrap{
+	position: absolute;
+	top: 100%;
+	right: 1%;
+	width: 320px;
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height 0.5s;
+	
+}
+
+.sub-menu-wrap.open-menu{
+	max-height: 400px;
+}
+
+.sub-menu{
+	background: #fff;
+	padding: 20px;
+	margin: 10px;
+}
+
+.user-info{
+	display:flex;
+	align-items: center;
+}
+
+.user-info h3{
+	font-weight: 500;
+}
+
+.user-info img{
+	width: 60px;
+	border-radius: 50%;
+	margin-right: 15px;
+	
+}
+
+.sub-menu hr{
+	border: 0;
+	height: 1px;
+	width: 100%;
+	background: #ccc;
+	margin: 15px 0 10px;
+}
+
+.sub-menu-link{
+	display:flex;
+	align-items: center;
+	text-decoration: none;
+	color: #525252;
+	margin: 12px 0;
+	
+}
+
+.sub-menu-link p{
+	width: 100%;
+}
+
+.sub-menu-link img{
+	width: 40px;
+	background: #e5e5e5;
+	border-radius: 50%;
+	padding: 8px;
+	margin-right: 15px;
+	
+}
+
+.sub-menu-link span{
+	font-size: 22px;
+	transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span{
+	transform: translateX(5px);
+}
+
+.sub-menu-link:hover p{
+	font-weight: 600;
+}
+
+
+
+
+
+.user-detail-card, .tracking-history-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.user-detail-card h2, .tracking-history-card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.shipment-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    justify-content: space-around;
+}
+
+
+.shipment-item img {
+    width: 90px;
+    height: 90px;
+   margin-left: 10px;
+}
+
+.shipment-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.user-detail-card, .tracking-history-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.user-detail-card h2, .tracking-history-card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+
+
+.user-info img {
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-danger {
+    background-color: #fd7337;
+}
+
+.btn-primary:hover, .btn-danger:hover {
+    opacity: 0.9;
+}
+
+.btn-edit-profile {
+    background-color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-edit-profile .material-symbols-outlined {
+    font-size: 24px;
+}
+
+.btn-add-parcel {
+    display: inline-flex;
+    align-items: center;
+    background-color: #fd7337;
+    margin-bottom: 15px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.btn-add-parcel .material-symbols-outlined {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+
+/* Popup Form CSS */
+#editForm {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+#editFormContent {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px; 
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#editForm h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+#editForm input[type="text"], #editForm select {
+    width: calc(100% - 0px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#editForm button[type="submit"], #editForm button[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#editForm button[type="submit"] {
+    background-color: #fd7337;
+    color: #fff;
+}
+
+#editForm button[type="button"] {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+#editForm button[type="submit"]:hover, #editForm button[type="button"]:hover {
+    opacity: 0.9;
+}
+
+
+
+
+
+
+
+.shipment-info{
+    margin-right: 130px;
+}
+
+
+.shipment-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+footer { 
+    text-align: center;
+    padding: 3px;
+    background-color: #f8f8f8;
+    color: #000;
+    font-size: 10px;
+}
